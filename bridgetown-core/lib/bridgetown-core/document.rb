@@ -170,7 +170,7 @@ module Bridgetown
     #
     # Returns the permalink or nil if no permalink was set in the data.
     def permalink
-      data && data.is_a?(Hash) && data["permalink"]
+      data&.is_a?(Hash) && data["permalink"]
     end
 
     # The computed URL for the document. See `Bridgetown::URL#to_s` for more details.
@@ -295,7 +295,7 @@ module Bridgetown
 
     def previous_doc
       pos = collection.docs.index { |post| post.equal?(self) }
-      collection.docs[pos - 1] if pos && pos.positive?
+      collection.docs[pos - 1] if pos&.positive?
     end
 
     def trigger_hooks(hook_name, *args)
