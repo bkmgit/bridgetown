@@ -10,14 +10,14 @@ module Bridgetown
   autoload :ContentStrategy, "bridgetown-model/content_strategy"
 
   Document.class_eval do
-    def to_model
-      ContentModel.new_with_document(self)
+    def model
+      @model ||= ContentModel.new_with_document(self)
     end
   end
 
   Page.class_eval do
-    def to_model
-      ContentModel.new_with_document(self)
+    def model
+      @model ||= ContentModel.new_with_document(self)
     end
   end
 end

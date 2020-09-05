@@ -2,6 +2,9 @@
 
 module Bridgetown
   module ContentModels
+    class Unknown < Bridgetown::ContentModel
+    end
+
     class Page < Bridgetown::ContentModel
     end
 

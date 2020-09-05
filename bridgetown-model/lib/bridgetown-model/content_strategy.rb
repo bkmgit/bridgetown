@@ -17,7 +17,7 @@ module Bridgetown
     end
 
     def self.klass_for_label(label)
-      @strategies.fetch label, ContentModel
+      @strategies.fetch label, ContentModels::Unknown
     end
   end
 end
