@@ -7,7 +7,7 @@ module Bridgetown
     extend ActiveSupport::Concern
 
     def attributes
-      wrapped_document&.data || {}
+      wrapped_document&.data || HashWithDotAccess.new
     end
 
     def attribute_changes

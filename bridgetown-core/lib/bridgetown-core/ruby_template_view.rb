@@ -22,7 +22,7 @@ module Bridgetown
       end
     end
 
-    attr_reader :layout, :page, :site, :content
+    attr_reader :layout, :page, :site, :content, :model
 
     def initialize(convertible)
       if convertible.is_a?(Layout)
@@ -32,6 +32,7 @@ module Bridgetown
       else
         @page = convertible
       end
+      @model = @page.model
       @site = page.site
     end
 

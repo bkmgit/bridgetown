@@ -3,6 +3,8 @@
 require "bridgetown-core"
 require "bridgetown-core/version"
 
+require "bridgetown-model/hash_with_dot_access"
+
 module Bridgetown
   autoload :AttributeChangeset, "bridgetown-model/attribute_changeset"
   autoload :ContentModel, "bridgetown-model/content_model"

@@ -30,12 +30,8 @@ module Bridgetown
       "<#{self.class} #{wrapped_document.relative_path} #{attributes}>"
     end
 
-    def wrap_document(document_to_wrap)
-      @_document = document_to_wrap
-    end
-
     def wrapped_document
-      @_document ||= self.class.new_document_to_wrap
+      @_document || wrap_document(self.class.new_document_to_wrap)
     end
 
     def url

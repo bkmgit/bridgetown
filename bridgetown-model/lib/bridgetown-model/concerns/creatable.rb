@@ -41,5 +41,15 @@ module Bridgetown
         end
       end
     end
+
+    def wrap_document(document_to_wrap)
+      @_document = document_to_wrap
+      @_document.data = if @_document.data.nil?
+                          attributes
+                        else
+                          @_document.data.with_dot_access
+                        end
+      @_document
+    end
   end
 end
