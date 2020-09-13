@@ -6,12 +6,11 @@ module Bridgetown
     end
 
     class Page < Bridgetown::ContentModel
+      collection :pages
     end
 
     class Post < Bridgetown::ContentModel
+      collection :posts
     end
   end
-
-  ContentStrategy.add_klass(ContentModels::Page, collection_labeled: :pages)
-  ContentStrategy.add_klass(ContentModels::Post, collection_labeled: :posts)
 end

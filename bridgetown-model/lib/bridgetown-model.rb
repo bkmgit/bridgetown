@@ -11,13 +11,13 @@ module Bridgetown
 
   Document.class_eval do
     def model
-      @model ||= ContentModel.new_with_document(self)
+      @model ||= ContentModel.wrap_document(self)
     end
   end
 
   Page.class_eval do
     def model
-      @model ||= ContentModel.new_with_document(self)
+      @model ||= ContentModel.wrap_document(self)
     end
   end
 end
